@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Building
 {
+	// Количество когда-либо построенных зданий.
+	private static int countOfBuildings = 0;
 	// Тип здания.
 	private String typeOfBuilding;
 	// Длина стороны основания.
@@ -27,10 +29,25 @@ public class Building
 		this.floorAmount = floorAmount;
 		this.stabilityFactor = stabilityFactor;
 	}
+	// Конструктор.
+	public Building()
+	{
+		this.initBuilding();
+		countOfBuildings++;
+	}
+	// Название строительной компании.
+	public static String companyName = "Альянс";
+	// Статический метод по получению количества зданий.
+	public static int getCountOfBuildings()
+	{
+		return countOfBuildings;
+	}
 	/* Функция по выводу свойств экземпляра класса Building. */
 	public void getBuilding()
 	{
 		System.out.println("Свойства данного здания:");
+		System.out.println("Название строительной компании: " + companyName);
+		System.out.println("Количество когда-либо построенных этой компанией зданий: " + countOfBuildings);
 		System.out.println("Тип здания: " + typeOfBuilding);
 		System.out.println("Длина стороны основания: " + sideLength);
 		System.out.println("Высота фундамента: " + basementHeight);
