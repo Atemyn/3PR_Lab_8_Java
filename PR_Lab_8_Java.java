@@ -74,11 +74,18 @@ public class PR_Lab_8_Java{
 		/*................................................................*/	
 				
 		/* Проверка использования this в функции AddToBuilding(). */
+		System.out.println("\nПроверка использования this в функции AddToBuilding(): ");
 		building = new Building();
 		
 		building.inputBuilding();
 		
 		building.addToBuilding(building);
 		/*........................................................*/
+		
+		/* Использование статического метода и изменение статичсекого поля. */
+		System.out.println("\nИспользование статического метода и изменение статичсекого поля: ");
+		Building.companyName = "Авангард";
+		System.out.println("\nОбщее количество когда-либо построенных этой компанией зданий: " + Building.getCountOfBuildings());
+		building.getBuilding();
 	}
 }
